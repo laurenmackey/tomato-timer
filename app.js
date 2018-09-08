@@ -15,17 +15,25 @@ app.get('/', function(req, res){
 
 // Render classical page
 app.get('/classical', function(req, res){
-    res.render('classical');
+    var myContext = {};
+    myContext.showTimer = true;
+    myContext.bodyId = "classicalBody";
+    myContext.buttonId = "classicalButton";
+    res.render('classical', myContext);
 });
 
 // Render lofi hip-hop page
 app.get('/lofi', function(req, res){
-    res.render('lofi');
+    var myContext = {};
+    myContext.showTimer = true;
+    res.render('lofi', myContext);
 });
 
 // Render ambient page
 app.get('/ambient', function(req, res){
-    res.render('ambient');
+    var myContext = {};
+    myContext.showTimer = true;
+    res.render('ambient', myContext);
 });
 
 // Render about page
