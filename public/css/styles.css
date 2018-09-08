@@ -1,3 +1,13 @@
+#classicalBody {
+	background-image: url("https://bit.ly/2NugCkd");
+	color: white;
+}
+
+#classicalButton {
+	color: white;
+}
+
+
 .tall {
     height: 100px;
 }
