@@ -72,15 +72,24 @@ body, html {
 	border-bottom-right-radius: 40%;
 }
 
+.centered {
+    text-align: center;
+}
+
 .section {
 	width: 80%;
 	margin: 0 auto;
 	text-align: center;
 }
 
-.btn {
+.btn-home {
 	background-color: transparent;
 	color: black;
+}
+
+.btn-blue {
+    background-color: #778899;
+    border-color: #778899;
 }
 
 #tomatoTop {

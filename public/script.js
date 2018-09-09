@@ -1,11 +1,11 @@
-// var maxPomodoroSeconds = 1500,
-//     maxShortBreakSeconds = 300, 
-//     maxLongBreakSeconds = 1800;
+var maxPomodoroSeconds = 1500,
+    maxShortBreakSeconds = 300, 
+    maxLongBreakSeconds = 1800;
 
 // use these for testing
-var maxPomodoroSeconds = 10,
-    maxShortBreakSeconds = 5, 
-    maxLongBreakSeconds = 30;
+// var maxPomodoroSeconds = 10,
+//     maxShortBreakSeconds = 5, 
+//     maxLongBreakSeconds = 30;
 
 // load first pomodoro timer
 function loadTimer() {
@@ -87,4 +87,3 @@ function startBreak(timerCount) {
   
     showTimer(maxSeconds, timerCount);
 }
-
