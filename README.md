@@ -2,8 +2,12 @@
 Pomodoro style timer + music for OSU BeaverHacks
 
 ## Setup
-To run the backend, run 
+To add new features:
+    $ heroku git:clone -a tomato-music-study
+    $ cd tomato-music-study
+Then to deploy:
+    $ git add .
+    $ git commit -am "make it better"
+    $ git push heroku master
 
-    node app.js
-
-Visit http://localhost:8001/ to see website
+Visit https://tomato-music-study.herokuapp.com/ to see website.
