@@ -5,7 +5,7 @@ var handlebars = require('express-handlebars').create({defaultLayout:'main'});
 app.use(express.static('public'));
 
 app.engine('handlebars', handlebars.engine);
-app.set('view engine', 'handlebars')
+app.set('view engine', 'handlebars');
 app.set('port', process.env.PORT);
 
 // Render homepage
