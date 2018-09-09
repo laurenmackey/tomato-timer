@@ -26,6 +26,8 @@ app.get('/classical', function(req, res){
 app.get('/lofi', function(req, res){
     var myContext = {};
     myContext.showTimer = true;
+    myContext.bodyId = "lofiBody";
+    myContext.buttonId = "lofiButton";
     res.render('lofi', myContext);
 });
 
@@ -33,6 +35,8 @@ app.get('/lofi', function(req, res){
 app.get('/ambient', function(req, res){
     var myContext = {};
     myContext.showTimer = true;
+    myContext.bodyId = "ambientBody";
+    myContext.buttonId = "ambientButton";
     res.render('ambient', myContext);
 });
 

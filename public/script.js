@@ -1,8 +1,20 @@
-// source: https://stackoverflow.com/questions/5517597/plain-count-up-timer-in-javascript
-function loadTimer() {
-    // store number of user breaks
-    var breakCount = 0;
+// var maxPomodoroSeconds = 1500,
+//     maxShortBreakSeconds = 300, 
+//     maxLongBreakSeconds = 1800;
 
+// use these for testing
+var maxPomodoroSeconds = 10,
+    maxShortBreakSeconds = 5, 
+    maxLongBreakSeconds = 30;
+
+// load first pomodoro timer
+function loadTimer() {
+    var timerCount = 0;
+    startPomodoro(timerCount);
+}
+
+// source: https://stackoverflow.com/questions/5517597/plain-count-up-timer-in-javascript
+function showTimer(maxSeconds, timerCount) {
     // set up to display timer
     var minutes = document.getElementById("minutes");
     var seconds = document.getElementById("seconds");
@@ -14,10 +26,9 @@ function loadTimer() {
     
     // increment one second at a time and display minutes and seconds
     function setTime() {
-        // stop timer after 25 minutes
-        // if (totalSeconds == 20) {
-        if (totalSeconds == 1500) {
-            stopTimer();
+        // stop timer after passed-in time interval
+        if (totalSeconds == maxSeconds) {
+            stopTimer(timerCount, myTime);
         } else {
             totalSeconds++;
             seconds.innerHTML = ": " + pad(totalSeconds % 60);
@@ -34,18 +45,45 @@ function loadTimer() {
             return valString;
         }
     }
+}
 
-    // stop timer when called, increment user breaks
-    function stopTimer() {
-        clearInterval(myTime);
-        totalSeconds = 0;
-        breakCount++;
-        displayBreak(breakCount);
+// stop timer when called, set up break if needed
+function stopTimer(timerCount, myTime) {
+    clearInterval(myTime);
+
+    // next one is a break if timerCount is odd
+    var nextIsBreak = timerCount % 2;
+    
+    // if currently a break, display pomodoro next, otherwise show break
+    if (nextIsBreak) {
+        timerCount++;
+        startPomodoro(timerCount);
+    } else {
+        timerCount++;
+        startBreak(timerCount);
     }
 }
 
+// display to user that it's pomodoro time
+function startPomodoro(timerCount) {
+    var pomodoroText = document.getElementById("break-text");
+    pomodoroText.innerHTML = "It's pomodoro time!";
+    showTimer(maxPomodoroSeconds, timerCount);
+}
+
 // display to user that it's time for a break
-function displayBreak(breakCount) {
+function startBreak(timerCount) {
+    var breakCount = (Math.floor(timerCount / 2) + 1);
     var breakText = document.getElementById("break-text");
     breakText.innerHTML = "It's time for break #" + breakCount + "!";
+
+    // set to short break if fewer than 4 breaks, otherwise set to long break
+    var maxSeconds = (breakCount < 4) ? maxShortBreakSeconds : maxLongBreakSeconds;
+    
+    // reset timer count after user is starting 4th break
+    if (breakCount == 4) {
+        timerCount = -1;
+    }
+  
+    showTimer(maxSeconds, timerCount);
 }
