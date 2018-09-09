@@ -6,7 +6,7 @@ app.use(express.static('public'));
 
 app.engine('handlebars', handlebars.engine);
 app.set('view engine', 'handlebars')
-app.set('port', 8001);
+app.set('port', process.env.PORT);
 
 // Render homepage
 app.get('/', function(req, res){
