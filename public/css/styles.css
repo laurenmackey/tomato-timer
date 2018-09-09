@@ -49,3 +49,51 @@ body, html {
 .down {
     margin-top: 5%;
 }
+
+#tomatoHome {
+	width: 25%;
+	margin: 0 auto;
+	list-style: none;
+	padding: 0px;
+	background: repeating-linear-gradient(
+    180deg,
+    green 0%,
+    green 5%,
+    hsl(9, 100%, 64%) 5%,
+    hsl(9, 100%, 64%) 33.3%,
+    hsl(9, 100%, 84%) 33.3%,
+    hsl(9, 100%, 84%) 66.6%,
+    hsl(9, 100%, 44%) 66.6%,
+    hsl(9, 100%, 44%) 100%
+  );
+  border-top-left-radius: 40%;
+	border-top-right-radius: 40%;
+	border-bottom-left-radius: 40%;
+	border-bottom-right-radius: 40%;
+}
+
+.section {
+	width: 80%;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.btn {
+	background-color: transparent;
+	color: black;
+}
+
+#tomatoTop {
+	background-color: transparent;
+	font-size: 3.5em;
+}
+
+#tomatoMiddle {
+	background-color: transparent;
+	font-size: 3em;
+}
+
+#tomatoBottom {
+	background-color: transparent;
+	font-size: 4em;
+}
