@@ -1,12 +1,15 @@
 // Boilerplate to setup the app
 var express = require("express");
-var app = express()
+var app = express();
+const PORT = process.env.PORT || 5000;
 var handlebars = require('express-handlebars').create({defaultLayout:'main'});
 app.use(express.static('public'));
 
-app.engine('handlebars', handlebars.engine);
-app.set('view engine', 'handlebars');
-app.set('port', process.env.PORT);
+// app.set('port', process.env.PORT);
+app.engine('handlebars', handlebars.engine)
+app.set('view engine', 'handlebars')
+// app.set('port', 8001);
+app.listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
 // Render homepage
 app.get('/', function(req, res){
