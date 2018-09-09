@@ -7,6 +7,24 @@
 	color: white;
 }
 
+#lofiBody {
+	background-image: url("https://bit.ly/2MXIr4Z");
+	color: white;
+}
+
+#lofiButton {
+	color: white;
+}
+
+#ambientBody {
+	background-image: url("https://bit.ly/2wUxVAF");
+	color: white;
+}
+
+#ambientButton {
+	color: white;
+}
+
 
 .tall {
     height: 100px;
