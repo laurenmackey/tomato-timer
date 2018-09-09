@@ -51,11 +51,11 @@ function showTimer(maxSeconds, timerCount) {
 function stopTimer(timerCount, myTime) {
     clearInterval(myTime);
 
-    // this is currently a break if timerCount is even
-    var isBreak = timerCount % 2;
+    // next one is a break if timerCount is odd
+    var nextIsBreak = timerCount % 2;
     
     // if currently a break, display pomodoro next, otherwise show break
-    if (isBreak) {
+    if (nextIsBreak) {
         timerCount++;
         startPomodoro(timerCount);
     } else {
@@ -79,5 +79,11 @@ function startBreak(timerCount) {
 
     // set to short break if fewer than 4 breaks, otherwise set to long break
     var maxSeconds = (breakCount < 4) ? maxShortBreakSeconds : maxLongBreakSeconds;
+    
+    // reset timer count after user is starting 4th break
+    if (breakCount == 4) {
+        timerCount = -1;
+    }
+  
     showTimer(maxSeconds, timerCount);
 }
