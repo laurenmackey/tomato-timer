@@ -1,5 +1,13 @@
+body, html {
+	height: 100%;
+}
+
 #classicalBody {
 	background-image: url("https://bit.ly/2NugCkd");
+	height: 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
 	color: white;
 }
 
@@ -8,7 +16,11 @@
 }
 
 #lofiBody {
-	background-image: url("https://bit.ly/2MXIr4Z");
+	background-image: url("https://bit.ly/2MW5ux0");
+	height: 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
 	color: white;
 }
 
@@ -18,6 +30,10 @@
 
 #ambientBody {
 	background-image: url("https://bit.ly/2wUxVAF");
+	height: 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;	
 	color: white;
 }
 
